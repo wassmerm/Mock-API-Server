@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -20,6 +22,7 @@ namespace Mock_API_Server.Controllers
 
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Stock>>> GetStocks() {
+          Debug.Print("Called GetStocks");
           return await context.Stocks.ToListAsync();
         }
 
